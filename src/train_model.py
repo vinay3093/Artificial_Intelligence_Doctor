@@ -1,7 +1,4 @@
-#################################################################
-# Code is folked from doctor ai, written by Edward Choi (mp2893@gatech.edu)
-# modified by Vinay S
-#################################################################
+
 
 import sys, random
 import numpy as np
