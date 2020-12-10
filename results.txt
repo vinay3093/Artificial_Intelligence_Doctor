@@ -6,7 +6,7 @@ python train_model.py data/visit_full 829 data/label_full 829 experiments/ --hid
 
 python test_model.py experiments/model_exp1.34.npz data/test_full data/test_full [300] --experiment 1 --input_dim_size 829
 
-==> recall@10:0.532097, recall@20:0.614281, recall@30:0.614281
+Results acheived in experiment 1 ==> recall@10:0.532097, recall@20:0.614281, recall@30:0.614281
 
 #######################################################################################################################################################################
 # Experiment 2 
@@ -17,7 +17,7 @@ python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidd
 
 python test_model.py experiments/model_exp2.21.npz data/test_full data/test_182 [300] --experiment 2 --input_dim_size 829
 
-==> recall@10:0.581451, recall@20:0.682000, recall@30:0.682000
+Results acheived in experiment 2  ==> recall@10:0.581451, recall@20:0.682000, recall@30:0.682000
 
 ########################################################################################################################################################################
 # Experiment 3
@@ -28,7 +28,7 @@ python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidd
 
 python test_model.py experiments/model_exp5.22.npz data/test_full data/test_182 [300] --experiment 5 --input_dim_size 829 --embed_file data/embedding_matrix_200
 
-==> recall@10:0.583141, recall@20:0.674636, recall@30:0.674636
+Results acheived in experiment 3 ==> recall@10:0.583141, recall@20:0.674636, recall@30:0.674636
 
 ########################################################################################################################################################################
 # Experiment 4 
@@ -39,7 +39,7 @@ python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidd
 
 python test_model.py experiments/model_exp6.22.npz data/test_full data/test_182 [300] --experiment 6 --input_dim_size 829 --embed_file data/embedding_matrix_400
 
-==> recall@10:0.585923, recall@20:0.678656, recall@30:0.678656
+Results acheived in experiment 4 ==> recall@10:0.585923, recall@20:0.678656, recall@30:0.678656
 
 #######################################################################################################################################################################
 # Experiment 5 
@@ -50,4 +50,6 @@ python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidd
 
 python test_model.py experiments/model_exp13.16.npz data/test_full data/test_182 [300] --experiment 13 --input_dim_size 829 --embed_file data/embedding_matrix_400 --topic_file data/test_topic_200 --topic_size 200
 
-==> recall@10:0.581140, recall@20:0.680816, recall@30:0.680816
+Results acheived in experiment 5 ==> recall@10:0.581140, recall@20:0.680816, recall@30:0.680816
+
+As seen, a slight increase in recall values are seen in each of the experiments with some tuning parameters like number of epochs, dropout rate etc. The ultimate accuracy score achieved is 0.68. This can be considered to say that our model has predicted the relavant data accuratly.
