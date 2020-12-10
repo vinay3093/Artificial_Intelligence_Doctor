@@ -1,6 +1,4 @@
-#################################################################
-#  AI Final Project Testing Phase Code 
-##########################################################
+
 
 import sys
 import numpy as np
@@ -18,7 +16,7 @@ import operator
 import time
 import warnings
 
-# recall = # intersection of ground truth and prediciton/# ground truth
+
 def recall_calculation(y_true, y_pred, top_top_rank=[20, 30, 40]):
 	recall = list()
 	for i in range(len(y_pred)):
@@ -304,11 +302,9 @@ def test_model(
 		iteration += 1
 		if iteration == 10: break
 
-	# pickle.dump(trueVec,open('experiments/trueVec_exp' + str(experiment),'wr'))
-	# pickle.dump(predVec,open('experiments/predVec_exp' + str(experiment),'wr'))
+	
 	recall = recall_calculation(trueVec, predVec)
-	# for cross validation
-	# pickle.dump(recall,open('experiments-cv/recall' + str(experiment),'wr'))
+	
 
 	# for experiments
 	pickle.dump(recall,open('experiments/recall' + str(experiment),'w'))
