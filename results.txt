@@ -1,0 +1,53 @@
+# Experiment 1 
+# input: full set, label: full set, predict: full set
+# no embedding, no duration, no notes
+
+python train_model.py data/visit_full 829 data/label_full 829 experiments/ --hidden_dim_size [300] --n_epochs 50 --embed_finetune 0 --experiment 1 --L2_softmax 0.001 --dropout_rate 1
+
+python test_model.py experiments/model_exp1.34.npz data/test_full data/test_full [300] --experiment 1 --input_dim_size 829
+
+==> recall@10:0.532097, recall@20:0.614281, recall@30:0.614281
+
+#######################################################################################################################################################################
+# Experiment 2 
+# input: full set, label: sub set, predict: sub set
+# no embedding, no duration, no notes
+
+python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidden_dim_size [300] --n_epochs 50 --embed_finetune 0 --experiment 2 --L2_softmax 0.001 --dropout_rate 1
+
+python test_model.py experiments/model_exp2.21.npz data/test_full data/test_182 [300] --experiment 2 --input_dim_size 829
+
+==> recall@10:0.581451, recall@20:0.682000, recall@30:0.682000
+
+########################################################################################################################################################################
+# Experiment 3
+# input: full set, label: sub set, predict: sub set
+# PCA embedding-200, no duration, no notes
+
+python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidden_dim_size [300] --n_epochs 50 --embed_finetune 0 --experiment 5 --L2_softmax 0.001 --dropout_rate 1 --embed_file data/embedding_matrix_200
+
+python test_model.py experiments/model_exp5.22.npz data/test_full data/test_182 [300] --experiment 5 --input_dim_size 829 --embed_file data/embedding_matrix_200
+
+==> recall@10:0.583141, recall@20:0.674636, recall@30:0.674636
+
+########################################################################################################################################################################
+# Experiment 4 
+# input: full set, label: sub set, predict: sub set
+# PCA embedding-400, no duration, no notes
+
+python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidden_dim_size [300] --n_epochs 50 --embed_finetune 0 --experiment 6 --L2_softmax 0.001 --dropout_rate 1 --embed_file data/embedding_matrix_400
+
+python test_model.py experiments/model_exp6.22.npz data/test_full data/test_182 [300] --experiment 6 --input_dim_size 829 --embed_file data/embedding_matrix_400
+
+==> recall@10:0.585923, recall@20:0.678656, recall@30:0.678656
+
+#######################################################################################################################################################################
+# Experiment 5 
+# input: full set, label: sub set, predict: sub set
+# PCA embedding-400, no duration, notes: n=200
+
+python train_model.py data/visit_full 829 data/label_182 182 experiments/ --hidden_dim_size [300] --n_epochs 50 --embed_finetune 0 --experiment 13 --L2_softmax 0.001 --dropout_rate 1 --embed_file data/embedding_matrix_400 --topic_file data/visit_topic_200 --topic_size 200
+
+python test_model.py experiments/model_exp13.16.npz data/test_full data/test_182 [300] --experiment 13 --input_dim_size 829 --embed_file data/embedding_matrix_400 --topic_file data/test_topic_200 --topic_size 200
+
+==> recall@10:0.581140, recall@20:0.680816, recall@30:0.680816
