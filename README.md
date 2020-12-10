@@ -11,7 +11,7 @@ Steps involved in the project.
 
 2) Next 'train_model.py' file should be executed. This files implements the model, set the parameters and the loss function and it also reads the training data.
 
-3) At last, 'test_model.py' file should be executed.This file loads the dataset and the trained model to test the model. An accuracy metric Recall will be fecthed. 
+3) At last, 'test_model.py' file should be executed.This file loads the dataset and the trained models from experiments folder to test the model. An accuracy metric Recall will be fecthed. 
 
 Execution procedures and the results acheived are shown in 'results.txt' file.
 
